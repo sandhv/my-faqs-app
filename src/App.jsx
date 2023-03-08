@@ -49,7 +49,11 @@ const Accordeon = () => {
   },[]);
    
   const handleClick = (tail) => {
-    setIsOpen(tail)
+    // setIsOpen(tail)
+    if (isOpen !== tail){
+      setIsOpen(tail)
+      }
+      else{setIsOpen(false)}
   }
 
   return (
