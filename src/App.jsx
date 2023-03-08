@@ -10,53 +10,28 @@ const Panel = ({isOpen,title,handleClick, children, image,id,name,type, amiiboSe
   return (
     <div >
       
-      <button  style={{color:isOpen? '#229954' :'white', border:isOpen?  '4px solid #5499C7':'3px solid #4A235A', width: 300, height: '100%', margin: 10 }} onClick={handleClick} >
+      <button  style={{ border:isOpen?  '4px solid #4A235A':'3px solid #5499C7', width: 300, height: '100%', margin: 10, textDecoration:'none'}} onClick={handleClick} >
 
       <div style={{display:'flex', flexDirection:'row',alignItems:'center'}}>
       <img src={image} alt="personaje" style={{width: 50, backgroundColor: '#BDC3C7', borderRadius:50, padding: 10 ,margin: 5}} />
-      <h3>¿Quién es tu personaje favorito?</h3>
+      <h3 style={{color:isOpen? '#D8BFD8' :'white'}}>¿Quién es tu personaje favorito?</h3>
       <p style={{transform:isOpen? 'rotate(180)': 'none'}}>+</p>
-
       </div>
-      {isOpen && <div style={{color:isOpen? '#229954' :'#A93226', backgroundColor:'yellow', borderRadius:30}}>
-        <h3>Nombre: {name}</h3>
-        <p>Tipo: {type}</p>
-        <p>Amibibo: {amiiboSeries}</p>
-        <p>Character: {character}</p>
+
+      
+      {isOpen && <div style={{ color:isOpen? '#BA55D3' :'#A93226', backgroundColor:'Thistle', borderRadius:30, padding: 2, marginTop:5}}>
+        <h3 style={{padding:0}}>Nombre: {name}</h3>
+        <div style={{color: '#000'}}>
+        <p><b>Tipo:</b> {type}</p>
+        <p><b>Amibibo:</b> {amiiboSeries}</p>
+        <p><b>Character:</b> {character}</p>
+        </div>
+        
         </div>}
-      </button>
-     
-       
-      
-      
-     
+      </button> 
     </div>
   )
 }
-//// BORRAR
-const data = [{
-  id:1,
-  question: 'pregunta 1',
-  answer: 'answer 1'
-}, {
-  id:2,
-  question: 'pregunta 2',
-  answer: 'answer 2'
-}, {
-  id:3,
-  question: 'pregunta 3',
-  answer: 'answer 3'
-}, {
-  id:4,
-  question: 'pregunta 4',
-  answer: 'answer 4'
-}, {
-  id:5,
-  question: 'pregunta 5',
-  answer: 'answer 5'
-}]
-//// BORRAR
-
 
 const Accordeon = () => {
   const [isOpen, setIsOpen] = useState(null)
@@ -104,6 +79,7 @@ function App() {
    
     <div>
      <h1>FAQs ❔</h1>
+     <h2 style={{backgroundColor:'#B0C4DE', color:'#4682B4', borderRadius:20}}>Amiibo cards</h2>
      <Accordeon/>
     </div>
   )
