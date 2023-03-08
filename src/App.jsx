@@ -10,7 +10,7 @@ const Panel = ({isOpen,title,handleClick, children, image,id,name,type, amiiboSe
   return (
     <div >
       
-      <button  style={{color:isOpen? '#229954' :'#A93226', border:isOpen?  '4px solid #5499C7':'3px solid #4A235A', width: 300, height: '100%', margin: 10 }} onClick={handleClick} >
+      <button  style={{color:isOpen? '#229954' :'white', border:isOpen?  '4px solid #5499C7':'3px solid #4A235A', width: 300, height: '100%', margin: 10 }} onClick={handleClick} >
 
       <div style={{display:'flex', flexDirection:'row',alignItems:'center'}}>
       <img src={image} alt="personaje" style={{width: 50, backgroundColor: '#BDC3C7', borderRadius:50, padding: 10 ,margin: 5}} />
@@ -18,14 +18,15 @@ const Panel = ({isOpen,title,handleClick, children, image,id,name,type, amiiboSe
       <p style={{transform:isOpen? 'rotate(180)': 'none'}}>+</p>
 
       </div>
-      </button>
-     
-      {isOpen && <div style={{color:isOpen? '#229954' :'#A93226'}}>
+      {isOpen && <div style={{color:isOpen? '#229954' :'#A93226', backgroundColor:'yellow', borderRadius:30}}>
         <h3>Nombre: {name}</h3>
         <p>Tipo: {type}</p>
         <p>Amibibo: {amiiboSeries}</p>
         <p>Character: {character}</p>
         </div>}
+      </button>
+     
+       
       
       
      
