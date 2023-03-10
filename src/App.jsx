@@ -57,7 +57,7 @@ const Accordeon = () => {
   }
 
   return (
-    <div>
+    <div style={{display:'flex', flexWrap:'wrap', gap:10, justifyContent:'center'}}>
       
       {chars.map((item)=>(
       <Panel key={item.tail} id={item.tail} isOpen={item.tail===isOpen} handleClick={()=>handleClick(item.tail)} title={item.question}
